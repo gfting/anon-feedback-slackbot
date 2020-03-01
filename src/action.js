@@ -15,8 +15,9 @@ module.exports = async (req, res) => {
 	}
 
 	if (parsedText) {
+		// sends back the feedback quoted
 		const resObject = {
-			text: parsedText,
+			text: `There is new feedback!\n>${parsedText}`,
 			response_type: "in_channel"
 		};
 
@@ -28,7 +29,8 @@ module.exports = async (req, res) => {
 		}).then(feedbackRes => {
 			if (feedbackRes.ok) {
 				res.status(200).send({
-					text: "Successfully sent your feedback!"
+					text:
+						"Successfully sent your feedback to the #feedback channel!"
 				});
 			}
 			res.status(400).send();
