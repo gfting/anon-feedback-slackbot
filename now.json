@@ -1,14 +1,17 @@
 {
 	"version": 2,
-	"builds": [{ "src": "src/index.js", "use": "@now/node" }],
+	"builds": [{ "src": "/src/action.js", "use": "@now/node" }],
 	"alias": ["vh-feedback"],
 	"routes": [
 		{
 			"src": "/action",
-			"dest": "/index.js",
+			"dest": "/src/action.js",
 			"headers": {
 				"Content-Type": "application/json"
 			}
 		}
-	]
+	],
+	"env": {
+		"SLACK_WEBHOOK": "@slack_webhook"
+	}
 }
