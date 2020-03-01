@@ -1,7 +1,6 @@
 {
 	"version": 2,
 	"builds": [{ "src": "/src/action.js", "use": "@now/node" }],
-	"alias": ["vh-feedback"],
 	"routes": [
 		{
 			"src": "/action",
