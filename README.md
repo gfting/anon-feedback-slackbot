@@ -40,3 +40,8 @@ Then, `git clone` the repository, and then `npm i` the repository. You will need
 ## Deployment
 
 There are a couple of options for deployment–I used [Zeit Now](https://zeit.co/dashboard) for ease of rapid deployment. If using it, then deploy your bot utilizing `now --prod` in your terminal. Use the resulting URL with `/action` afterwards for your slash command url.
+
+# Future Steps
+
+-   [ ] Integrate OAuth process for other organizations to adopt
+-   [ ] Link up with interesting web interface; integrate with VandyHacks documentation systems and Notion if they come out with an API
