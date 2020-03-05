@@ -39,9 +39,14 @@ Then, `git clone` the repository, and then `npm i` the repository. You will need
 
 ## Deployment
 
-There are a couple of options for deployment–I used [Zeit Now](https://zeit.co/dashboard) for ease of rapid deployment. If using it, then deploy your bot utilizing `now --prod` in your terminal. Use the resulting URL with `/action` afterwards for your slash command url.
+There are a couple of options for deployment–I used [Zeit Now](https://zeit.co/dashboard) for ease of rapid deployment.
+
+-   If using it, then deploy your bot utilizing `now --prod` in your terminal. Use the resulting URL with `/action` afterwards for your slash command url.
+-   In order to export the environment variables for Zeit Now, you must follow the syntax `now secrets add <secret-name> <secret-value>`. Here, you should therefore say `now secrets add SLACK_WEBHOOK <your_webhook_url_here>`. For more documentation on secrets, refer to [their article on severless functions here](https://zeit.co/docs/v2/serverless-functions/env-and-secrets).
 
 # Future Steps
 
 -   [ ] Integrate OAuth process for other organizations to adopt
 -   [ ] Link up with interesting web interface; integrate with VandyHacks documentation systems and Notion if they come out with an API
+-   [ ] OAuth for other organizations
+-   [ ] Install button for homepage
