@@ -8,6 +8,13 @@
 			"headers": {
 				"Content-Type": "application/json"
 			}
+		},
+		{
+			"src": "/ee",
+			"dest": "/src/ee.js",
+			"headers": {
+				"Content-Type": "application/json"
+			}
 		}
 	],
 	"env": {
