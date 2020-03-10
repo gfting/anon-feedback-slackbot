@@ -11,9 +11,7 @@ module.exports = async (req, res) => {
 		parsedText = body.text;
 		response_url = body.response_url;
 	} catch (e) {
-		res.status(400).send({
-			text: "There was an error while parsing the request."
-		});
+		res.status(400);
 	}
 
 	if (parsedText) {
@@ -40,7 +38,7 @@ module.exports = async (req, res) => {
 		// res.status(200).send(resObject);
 	} else {
 		res.status(404).send({
-			error: "There was either no text or there was no response url."
+			error: "There was either now text or there was no response url."
 		});
 	}
 };

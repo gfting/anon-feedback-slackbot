@@ -1,6 +1,9 @@
 {
 	"version": 2,
-	"builds": [{ "src": "/src/action.js", "use": "@now/node" }],
+	"builds": [
+		{ "src": "/src/action.js", "use": "@now/node" },
+		{ "src": "/src/ee.js", "use": "@now/node" }
+	],
 	"routes": [
 		{
 			"src": "/action",
@@ -8,9 +11,17 @@
 			"headers": {
 				"Content-Type": "application/json"
 			}
+		},
+		{
+			"src": "/ee",
+			"dest": "/src/ee.js",
+			"headers": {
+				"Content-Type": "application/json"
+			}
 		}
 	],
 	"env": {
-		"SLACK_WEBHOOK": "@slack_webhook"
+		"SLACK_WEBHOOK": "@slack_webhook",
+		"SLACK_WEBHOOK2": "@slack_webhook2"
 	}
 }
