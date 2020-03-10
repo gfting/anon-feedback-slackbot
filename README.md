@@ -42,7 +42,7 @@ Then, `git clone` the repository, and then `npm i` the repository. You will need
 There are a couple of options for deployment–I used [Zeit Now](https://zeit.co/dashboard) for ease of rapid deployment.
 
 -   If using it, then deploy your bot utilizing `now --prod` in your terminal. Use the resulting URL with `/action` afterwards for your slash command url.
--   In order to export the environment variables for Zeit Now, you must follow the syntax `now secrets add <secret-name> <secret-value>`. Here, you should therefore say `now secrets add SLACK_WEBHOOK <your_webhook_url_here>`. For more documentation on secrets, refer to [their article on severless functions here](https://zeit.co/docs/v2/serverless-functions/env-and-secrets).
+-   In order to export the environment variables for Zeit Now, you must follow the syntax `now secrets add <secret-name> <secret-value>`. Here, you should therefore say `now secrets add SLACK_WEBHOOK <your_webhook_url_here>`. Then, in `now.json`, you need to add an `"env"` property on the `json` object. Add what the environment variable in your code corresponds to in `now`–for reference, the format should be the lowercase version of the `.env` name, with an `@` preceding it. For example, `"SLACK_WEBHOOK": "@slack_webhook"`. For more documentation on secrets, refer to [their article on serverless functions here](https://zeit.co/docs/v2/serverless-functions/env-and-secrets).
 
 # Future Steps
 

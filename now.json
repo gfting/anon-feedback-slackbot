@@ -1,6 +1,9 @@
 {
 	"version": 2,
-	"builds": [{ "src": "/src/action.js", "use": "@now/node" }],
+	"builds": [
+		{ "src": "/src/action.js", "use": "@now/node" },
+		{ "src": "/src/ee.js", "use": "@now/node" }
+	],
 	"routes": [
 		{
 			"src": "/action",
@@ -18,6 +21,7 @@
 		}
 	],
 	"env": {
-		"SLACK_WEBHOOK": "@slack_webhook"
+		"SLACK_WEBHOOK": "@slack_webhook",
+		"SLACK_WEBHOOK2": "@slack_webhook2"
 	}
 }
