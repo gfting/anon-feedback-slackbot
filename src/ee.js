@@ -11,18 +11,20 @@ module.exports = async (req, res) => {
 		parsedText = body.text;
 		response_url = body.response_url;
 	} catch (e) {
-		res.status(400);
+		res.status(400).send({
+			text: "There was an error while parsing the request."
+		});
 	}
 
 	if (parsedText) {
 		// sends back the feedback quoted
 		const resObject = {
-			text: `There is new feedback!\n>${parsedText}`,
+			text: `There is new feedback!\n>:whead::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wbody::wtail:`,
 			response_type: "in_channel"
 		};
 
 		// send the feedback back to the channel via post
-		fetch(process.env.SLACK_WEBHOOK, {
+		fetch(process.env.SLACK_WEBHOOK2, {
 			method: "post",
 			body: JSON.stringify(resObject),
 			headers: { "Content-Type": "application/json" }
@@ -38,7 +40,7 @@ module.exports = async (req, res) => {
 		// res.status(200).send(resObject);
 	} else {
 		res.status(404).send({
-			error: "There was either now text or there was no response url."
+			error: "There was either no text or there was no response url."
 		});
 	}
 };
