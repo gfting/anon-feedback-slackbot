@@ -2,7 +2,8 @@
 	"version": 2,
 	"builds": [
 		{ "src": "/src/action.js", "use": "@now/node" },
-		{ "src": "/src/ee.js", "use": "@now/node" }
+		{ "src": "/src/ee.js", "use": "@now/node" },
+		{ "src": "/src/confess.js", "use": "@now/node" }
 	],
 	"routes": [
 		{
@@ -18,10 +19,18 @@
 			"headers": {
 				"Content-Type": "application/json"
 			}
+		},
+		{
+			"src": "/confess",
+			"dest": "/src/confess.js",
+			"headers": {
+				"Content-Type": "application/json"
+			}
 		}
 	],
 	"env": {
 		"SLACK_WEBHOOK": "@slack_webhook",
-		"SLACK_WEBHOOK2": "@slack_webhook2"
+		"SLACK_WEBHOOK2": "@slack_webhook2",
+		"SLACK_WEBHOOK_CONFESS": "@slack_webhook_confess"
 	}
 }
