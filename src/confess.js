@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
 	if (parsedText) {
 		// sends back the feedback quoted
 		const resObject = {
-			text: `There's a new confession!\n>${parsedText}`,
+			text: `${parsedText}`,
 			response_type: "in_channel",
 		};
 
