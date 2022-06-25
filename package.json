@@ -18,7 +18,7 @@
 	"homepage": "https://github.com/gfting/anon-feedback-slackbot#readme",
 	"dependencies": {
 		"micro": "^9.3.4",
-		"node-fetch": "^2.6.0",
+		"node-fetch": "^2.6.7",
 		"querystring": "^0.2.0"
 	},
 	"devDependencies": {
